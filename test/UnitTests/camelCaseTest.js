@@ -1,5 +1,5 @@
 import chai from "chai"
-import camelCase from "../src/camelCase.js"
+import camelCase from "../../src/camelCase.js"
 
 describe('camelCase', function(){
     it('Every return value should be of type String', function() {

@@ -1,5 +1,5 @@
 import chai from "chai"
-import add from "../src/add.js"
+import add from "../../src/add.js"
 
 describe('add', function() {
     it('Add should return sum of two positive numbers', function(){

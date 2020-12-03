@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha || true",
+    "test": "mocha test/UnitTests || true", 
     "test_wind": "node --experimental-modules node_modules/mocha/bin/_mocha || true"
   },
   "author": "",
