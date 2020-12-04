@@ -18,9 +18,7 @@ describe('Testing castArray', function () {
         chai.assert.sameDeepOrderedMembers(castArray(undefined), [undefined])
     })
     it("castArray() => [] ", function () {
-        console.log('täällä virhe:!!!')
-        // chai.assert.sameDeepOrderedMembers(castArray(), [])
-        // chai.assert.isArray(castArray())
+        chai.assert.sameDeepOrderedMembers(castArray(), [])
     })
     it("castArray([1,2,3]) = [1,2,3] (array will not be nested) ", function () {
         chai.assert.sameDeepOrderedMembers([1, 2, 3], [1, 2, 3])
