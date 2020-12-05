@@ -9,6 +9,10 @@ import add from "../../src/add.js";
 import compact from "../../src/compact.js";
 import slice from "../../src/slice.js";
 import reduce from "../../src/reduce.js";
+import isArrayLike from "../../src/isArrayLike.js";
+import isObjectLike from "../../src/isObjectLike.js";
+import chunk from "../../src/chunk.js";
+import every from "../../src/every.js";
 
 let res;
 let expectetRes;
@@ -30,8 +34,8 @@ describe('String manipulations', function() {
         var a = "The quicK Brown fox JUMPS oVEr the laZy dOg"
         var b = "brOwN jUmps The The dog lAzY OVer qUIck"
 
-        var a_words = words(a)
-        var b_words = words(b)
+        var a_words = words(a, /[^, ]+/g)
+        var b_words = words(b, /[^, ]+/g)
 
         a_words = map(a_words, capitalize)
         b_words = map(b_words, capitalize)
@@ -39,6 +43,21 @@ describe('String manipulations', function() {
         res = difference(a_words, b_words)[0]
         expectetRes = 'Fox'
         chai.assert.equal(res, expectetRes)
+    })
+
+    it("Turning every word to start with capital letter", function() {
+        var sentence = "brown jumps the The dog lazy over quick"
+        var sentenceWords = words(sentence)
+        var capWords = map(sentenceWords, capitalize)
+        sentence = ""
+        for (var i = 0; i < capWords.length; i++) {
+            sentence += capWords[i]
+            if (i != capWords.length - 1) {
+                sentence += " "
+            }
+        }
+        expectetRes = "Brown Jumps The The Dog Lazy Over Quick"
+        chai.assert.equal(sentence, expectetRes)
     })
 });
 
@@ -85,6 +104,14 @@ describe("Array manipulations", function() {
         var wageMean = wageRes[0] / wageRes[1]
 
         chai.assert.equal(wageMean, (3750+4050+4500)/3)
+    })
+
+    it("Chunking array and checking if every subarray is array", function() {
+        const myArray = ['a', 'b', 'c', 'd', 'e', 'f']
+        var tmp = chunk(myArray, 5)
+        res = every(tmp, isArrayLike)
+        expectetRes = true;
+        chai.assert.equal(res, expectetRes)
     })
 })
 
