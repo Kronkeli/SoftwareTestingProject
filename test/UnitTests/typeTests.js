@@ -196,7 +196,7 @@ describe('isEmpty Tests', function() {
 
         res = isEmpty(tmp)
         chai.assert.isTrue(res, "Same object, but properities enumerable is false");
-        chai.assert.equal(tmp.a, 1) // Testing if object still has properity a
+        chai.assert.strictEqual(tmp.a, 1) // Testing if object still has properity a
     })
 });
 
