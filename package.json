@@ -5,60 +5,18 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha test/UnitTests || true",
-    "test_wind": "node --experimental-modules node_modules/mocha/bin/_mocha || true",
-    "test:jscover": "jscover ./src ./src-ins",
-    "test:jscoverage": "jscoverage ./src/ ./src-ins/",
-    "test:mjs": "mocha test/UnitTests -r jscoverage --covignore .covignore --covout=html --covinject=true --coverage=90,85,75 test",
-    "test:mjssimple": "mocha -r jscoverage test/UnitTests",
-    "jtn": "node_modules/.bin/jscoverage src/ lib-cov",
-    "jtn2": "mocha -r @babel/register test/UnitTests",
-    "jtn3": "jscoverage lib lib-cov",
-    "istanbul": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha test/UnitTests",
-    "help": "mocha help",
-    "moc_ist": "nyc  --reporter=text mocha test/UnitTests",
-    "test2": "istanbul cover node_modules/mocha/bin/_mocha test/UnitTests",
-    "coverage": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha test/UnitTests",
-    "test3": "istanbul cover _mocha test/UnitTests/*.js"
+    "test": "mocha test/UnitTests --timeout 10000",
+    "coverage": "c8 --reporter=html --reporter=text mocha test/UnitTests",
+    "coverage_report": "c8 report --reporter=text-lcov | coveralls",
+    "test_wind": "node --experimental-modules node_modules/mocha/bin/_mocha || true"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "^7.7.4",
-    "@babel/core": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
-    "@babel/register": "^7.7.4",
-    "babel-cli": "^6.26.0",
-    "babel-plugin-istanbul": "^6.0.0",
+    "c8": "^7.3.5",
     "chai": "^4.2.0",
     "coveralls": "^3.1.0",
-    "cross-env": "^7.0.3",
-    "istanbul": "^0.4.5",
-    "jscover": "^1.0.0",
-    "jscoverage": "^0.6.0",
-    "mocha": "^8.1.0",
-    "mocha-lcov-reporter": "^1.3.0",
-    "nyc": "^15.1.0"
-  },
-  "mocha": {
-    "diff": false,
-    "extension": [
-      "js"
-    ],
-    "require": "@babel/register",
-    "package": "./package.json",
-    "reporter": "spec"
-  },
-  "nyc": {
-    "require": [
-      "@babel/register"
-    ],
-    "reporter": [
-      "lcov",
-      "text"
-    ],
-    "sourceMap": false,
-    "instrument": false
+    "mocha": "^8.2.1"
   }
 }

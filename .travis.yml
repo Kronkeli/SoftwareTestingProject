@@ -1,4 +1,20 @@
+sudo: false
+
 language: node_js
+
 node_js: 
-  - 12
+  - node
+  
 cache: npm
+
+before_script:
+  - npm ci
+
+script:
+  - npm test
+
+after_script:
+  - npm run coverage
+
+notifications:
+  - email: false
