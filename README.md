@@ -1,5 +1,9 @@
 # Student template
 
+[![Build Status](https://travis-ci.com/Kronkeli/SoftwareTestingProject.svg?branch=main)](https://travis-ci.com/Kronkeli/SoftwareTestingProject)
+
+[![Coverage Status](https://coveralls.io/repos/github/Kronkeli/SoftwareTestingProject/badge.svg?branch=main)](https://coveralls.io/github/Kronkeli/SoftwareTestingProject?branch=main)
+
 ## Purpose of this repository
 
 This is a project template for students participating in Software Testing course
