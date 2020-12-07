@@ -17,4 +17,10 @@ describe('Testing ceil', function () {
     it('negative numbers: ceil(-1711.04,-1) => 1750 ?', function () {
         chai.assert.equal(ceil(-1751.04, -1), -1750)
     })
+    it('faulty parameters: first parameter is NaN', function () {
+        chai.assert.isNaN(ceil(NaN))
+    })
+    it('faulty parameters: second parameter is NaN', function () {
+        chai.assert.isNaN(ceil(NaN))
+    })
 })

@@ -8,7 +8,7 @@ describe('difference Tests', function () {
     it('difference([], [2,3]) => ???', function () {
         chai.assert.sameMembers(difference([], [2, 3]), [])
     })
-    it('difference([4,5,6], []) => ???', function () {
+    it('comparing same arrays should return empty array', function () {
         chai.assert.sameOrderedMembers(difference([4, 5, 6], [4, 5, 6]), [])
     })
 })

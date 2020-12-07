@@ -11,7 +11,7 @@ describe('add Tests', function () {
     it('add works with zeros', function () {
         chai.assert.equal(add(0, 0), 0);
     });
-    it('add works with numbers in string form', function () {
-        chai.assert.equal(add('1', '4'), 5)
+    it('add should throw error with faulty parameters', function () {
+        chai.assert.notEqual(add('asd', 'jgj'), 'asdjgj')
     })
 });

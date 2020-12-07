@@ -11,7 +11,7 @@ describe('division Tests', function () {
     it('divide(-6,12) => -0.5 ?', function () {
         chai.assert.equal(divide(-6, 12), -0.5)
     })
-    it('divide(1,0) => NaN', function () {
+    it('division by zero should return NaN', function () {
         chai.assert.isNaN(divide(1, 0))
     })
 })
