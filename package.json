@@ -7,7 +7,7 @@
   "scripts": {
     "test": "mocha test/UnitTests; exit 0",
     "coverage": "c8 --reporter=html --reporter=text --include src/ --exclude src/.internal mocha test/UnitTests",
-    "coverage_report": "c8 report --reporter=text-lcov --exclude src/.internal | coveralls",
+    "coverage_report": "c8 report --reporter=text-lcov --include src/ --exclude src/.internal | coveralls",
     "test_wind": "node --experimental-modules node_modules/mocha/bin/_mocha || true"
   },
   "author": "",
