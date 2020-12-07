@@ -12,6 +12,6 @@ describe('Testing chunk', function () {
         chai.assert.sameDeepMembers(chunk([]), [])
     })
     it("null input returns empty array", function () {
-        chai.assert.sameDeepMemberschunk(null(), [])
+        chai.assert.sameDeepMembers(chunk(null), [])
     })
 })
